@@ -2,7 +2,10 @@ import json
 from urllib.request import urlopen
 
 def lookup( dictword ):
-  return dictword
+  if dictword.isalpha():
+    return dictword
+  else:
+    return 'error'
 
 def get_word():
   word_input = input("Please enter a word in English: ")
