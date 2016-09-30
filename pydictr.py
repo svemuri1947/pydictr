@@ -1,14 +1,18 @@
 import json
-import urllib.request
+from http.client import HTTPConnection
+from urllib.request import Request, urlopen
 
-api_url = 'https://owlbot.info/api/v1/dictionary/'
+api_url = 'http://owlbot.info/api/v1/dictionary/'
 api_suffix = '?format=json'
 
 # lookup that word
 def lookup( dictword ):
   dictword = dictword.rstrip()
   if check_alpha( dictword ):
-    return dictword
+    api_request_url = api_url + dictword + api_suffix
+    req = Request(api_request_url, headers={'User-Agent': 'Mozilla/5.0'})
+    webpage = urlopen(req).read()
+    return webpage
   else:
     return 'error'
 
