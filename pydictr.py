@@ -27,6 +27,7 @@ def check_alpha( dictword ):
 # Get user input for word
 def get_word():
   word_input = input("Please enter a word in English: ")
+  print('')
   return word_input
 
 word = get_word()
@@ -36,4 +37,7 @@ def_nums = len(json_parsed)
 
 for x in range(def_nums):
   print(x+1)
+  print(json_parsed[x]['type'])
   print(json_parsed[x]['defenition'])
+  print(json_parsed[x]['example'])
+  print('')
