@@ -43,5 +43,8 @@ def output_def(word):
 json_parsed = json.loads(web_call(get_word()))
 def_nums = len(json_parsed)
 
-for x in range(def_nums):
-  output_def(x)
+if len(json_parsed) > 0:
+  for x in range(def_nums):
+    output_def(x)
+else:
+  print("That's not an English word")
