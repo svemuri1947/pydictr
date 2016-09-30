@@ -37,9 +37,7 @@ def output_def(word):
   print(json_parsed[word]['example'])
   print('')
 
-word = get_word()
-json_string = web_call(word)
-json_parsed = json.loads(json_string)
+json_parsed = json.loads(web_call(get_word()))
 def_nums = len(json_parsed)
 
 for x in range(def_nums):
