@@ -1,12 +1,13 @@
 import json
 from http.client import HTTPConnection
 from urllib.request import Request, urlopen
+from pprint import pprint
 
 api_url = 'http://owlbot.info/api/v1/dictionary/'
 api_suffix = '?format=json'
 
 # lookup that word
-def lookup( dictword ):
+def web_call( dictword ):
   dictword = dictword.rstrip()
   if check_alpha( dictword ):
     api_request_url = api_url + dictword + api_suffix
@@ -29,7 +30,8 @@ def get_word():
   return word_input
 
 word = get_word()
-word_processed = lookup(word)
-print(word_processed)
+json_string = web_call(word)
+json_parsed = json.loads(json_string)
+print(json_parsed[0]['defenition'])
 
 # json.load(urllib2.urlopen("url"))
