@@ -8,6 +8,8 @@ def get_word():
   word_input = input("Please enter a word in English: ")
   return word_input
 
-str(lookup(get_word))
+word = get_word()
+word_processed = lookup(word)
+print(word_processed)
 
 # json.load(urllib2.urlopen("url"))
