@@ -32,6 +32,8 @@ def get_word():
 word = get_word()
 json_string = web_call(word)
 json_parsed = json.loads(json_string)
-print(json_parsed[0]['defenition'])
+def_nums = len(json_parsed)
 
-# json.load(urllib2.urlopen("url"))
+for x in range(def_nums):
+  print(x+1)
+  print(json_parsed[x]['defenition'])
