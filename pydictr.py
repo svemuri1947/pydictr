@@ -30,14 +30,17 @@ def get_word():
   print('')
   return word_input
 
+def output_def(word):
+  print(word+1)
+  print(json_parsed[word]['type'])
+  print(json_parsed[word]['defenition'])
+  print(json_parsed[word]['example'])
+  print('')
+
 word = get_word()
 json_string = web_call(word)
 json_parsed = json.loads(json_string)
 def_nums = len(json_parsed)
 
 for x in range(def_nums):
-  print(x+1)
-  print(json_parsed[x]['type'])
-  print(json_parsed[x]['defenition'])
-  print(json_parsed[x]['example'])
-  print('')
+  output_def(x)
