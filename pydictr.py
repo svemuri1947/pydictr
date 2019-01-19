@@ -4,7 +4,7 @@ from http.client import HTTPConnection
 from urllib.request import Request, urlopen
 from pprint import pprint
 
-api_url = 'http://owlbot.info/api/v1/dictionary/'
+api_url = 'https://owlbot.info/api/v2/dictionary/owl'
 api_suffix = '?format=json'
 
 try:
@@ -44,7 +44,7 @@ def get_word():
 def output_def(word):
   print(word+1)
   print(json_parsed[word]['type'])
-  print(json_parsed[word]['defenition'])
+  print(json_parsed[word]['definition'])
   print(json_parsed[word]['example'])
   print('')
 
